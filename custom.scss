@@ -1,0 +1,21 @@
+/*-- scss:defaults --*/
+$body-bg: 	#fff;
+$body-color: 	#222;
+$text-muted: 	lighten($body-color, 50%);
+$link-color: 	#2a76dd;
+$link-color-hover: 	lighten($link-color, 15%);
+$selection-bg: 	lighten($link-color, 25%);
+$selection-color: 	$body-bg;
+$light-bg-text-color: 	#222;
+$light-bg-link-color: 	#2a76dd;
+$light-bg-code-color: 	#4758ab;
+$dark-bg-text-color: 	#fff;
+$dark-bg-link-color: 	#42affa;
+$dark-bg-code-color: 	#ffa07a;
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}

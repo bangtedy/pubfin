@@ -1,0 +1,375 @@
+---
+title: "Chap. 4: Money and Public Finance"
+author: "Tedy Herlambang"
+subtitle: ""
+footer: ub.ac.id
+logo: images/logo-ub-bottom.png
+editor: source
+bibliography: pubfin.bib
+execute:
+  eval: true
+  echo: true
+  warning: true
+  error: true   
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    code-copy: hover
+    code-overflow: scroll
+    multiplex: false
+    embed-resources: false
+    controls: auto
+    progress: true
+    history: true
+    hash-type: number    
+    slide-number: c/t
+    show-slide-number: print  
+    menu:
+      side: right
+      width: normal
+      numbers: true
+    chalkboard:
+      theme: chalkboard
+      # src: drawings.json
+      read-only: false
+title-slide-attributes:
+  # data-background-image: images/logo-ub1.png
+  data-background-opacity: "0.5"
+  data-background-size: 15%
+  data-background-position: 2% 2%
+  # data-background-image: grid-worms/bird.webp
+  # background-iframe: grid-worms/index.html
+preload-iframes: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# General R options
+set.seed(111)               # in case we use randomized procedures       
+options(scipen = 999)       # positive values bias towards fixed and negative towards scientific notation
+options(repos = 
+  c(getOption("repos")["CRAN"],
+  CRANextra = "https://mirror.clientvps.com/CRAN/")
+) # use CRAN as default, set CRANextra to Nürnberg mirror
+
+# Load packages
+if (!require("pacman")) install.packages("pacman", dependencies = TRUE)
+packages <- c(
+  "papaja",
+  "here", "fs",
+  "conflicted",
+  "rio",
+  "tidyverse", 
+  "psych",          
+  "rstatix", "ggstatsplot",
+  "ggplot2", "ggpubr", "scales",
+  "report",
+  # , ...
+  "plotly", "crosstalk", "DT",
+  # for examples:
+  "htmltools",
+  "palmerpenguins",
+  "d3scatter"
+)
+pacman::p_load(char = packages)
+
+# Set here to Rnotebook directory
+here::set_here()
+unloadNamespace("here")                   # need new R session or unload namespace for .here file to take precedence over .Rproj
+notebook_name <- fs::path_file(here::here())
+
+# Solve conflicts in favor of tidyverse
+conflicted::conflict_prefer("filter", winner = "dplyr")
+conflicted::conflict_prefer("select", winner = "dplyr")
+conflicted::conflict_prefer("slice", winner = "dplyr")
+conflicted::conflict_prefer("rename", winner = "dplyr")
+conflicted::conflict_prefer("count", winner = "dplyr")
+
+# Themes for ggplot2 plotting (here used APA style)
+theme_set(papaja::theme_apa())
+```
+## 4.1 Introduction 
+
+- Inflation is a tax... as a tax: 
+  + generates revenue for the government, and 
+  + distorts private sector behaviour. 
+  
+## The Distortions
+
+- In the Sidrauski model (*chap 2*) inflation distorts the demand for money, thereby generating welfare effects because real money holdings directly yield utility. 
+- In the cash-in-advance model (*chap 3*), inflation serves as an implicit tax on consumption, so a higher inflation rate generates a substitution toward leisure, leading to lower labor supply, output, and consumption. 
+
+## The analysis of these distortions 
+
+- In the analysis of these distortions, the revenue side of the inflation tax was ignored except to note that the Friedman rule for the optimal rate of inflation may need to be modified if the government does not have lump-sum sources of revenue available.
+
+- Any change in inflation that affects the revenue from the inflation tax will have budgetary implications for the government. 
+  + If higher inflation allows other forms of distortionary taxation to be reduced, this fact must be incorporated into any assessment of the costs of the inflation tax. 
+
+## Several insights from a public finance approach {.smaller}
+
+- The recognition that fiscal and monetary policies are linked through the government sector's budget constraint. 
+- Variations in the inflation rate can have implications for the fiscal authority's decisions about expenditures and taxes, *vice versa*, decisions by the fiscal authority can have implications for money growth and inflation. 
+- When inflation is viewed as a distortionary revenue-generating tax, the degree to which it should be relied upon depends on the set of alternative taxes available to the government and on the reasons individuals hold money. 
+- Whether the most appropriate strategy is to think of money as entering the utility function as a final good or as an intermediate input into the production of transaction services can have implications for whether money should be taxed.
+
+## 4.2 Budget Accounting {.smaller}
+
+- To obtain goods and services, governments in market economies need to generate revenue. 
+- One way they can obtain goods and services is by printing money, which is then used to 
+purchase resources from the private sector.
+- Consider the following identity for the fiscal branch of a government: 
+
+$$
+G_t+i_{t-1}B^T_{t-1}=T_t+({B^T_t}-B^T_{t-1})+RCB_t, \tag{4.1}
+$$
+
+- where all variables are in nominal terms. 
+
+## Treasury's budget constraint
+
+- The left side consists of government expenditures on goods, services, and transfers $G_t$, plus interest payments on the outstanding debt $i_{t-1}B^T_{t-1}$ 
+- The superscript T denoting total debt, assumed to be one period in maturity, where debt issued in period $t - 1$ earns the nominal interest rate $i_{t-1}$, 
+- The right side consists of tax revenue $T_t$, plus new issues of interest-bearing debt $B^T_{t} - B^T_{t-1}$ plus any direct receipts from the central bank $RCB_t$.
+
+## The central bank budget identity {.smaller}
+
+- If the central bank's assets consist of government debt, its budget identity takes the form
+
+```{r, out.width = "300px", echo=FALSE}
+knitr::include_graphics("images/42.png")
+```
+
+- where $B^M_t - B^M_{t-1}$ is equal to the central bank's purchases of government debt, $i_{t-1}B^M_{t-1}$ is the central bank's receipt of interest payments from the Treasury, and $H_t - H_{t-1}$ is the change in the central bank's own liabilities. 
+
+- These liabilities are called high-powered money, or the monetary base, because they form the stock of currency held by the nonbank public plus bank reserves, and they represent the reserves private banks can use to back deposits.
+
+## The Treasury and the central bank {.smaller}
+
+```{r, out.width = "300px", echo=FALSE}
+knitr::include_graphics("images/43.png")
+```
+
+- According to (4.3), the dollar value of government purchases $G_t$. plus its payment of 
+interest on outstanding privately held liabilities $i_{t-1}-B_{t-1}$, must be funded by revenue that can be obtained from one of three alternative sources. 
+- First, $T_t$ represents revenue generated  by taxes (other than inflation). 
+- Second, the government can obtain funds by borrowing from the private sector. This borrowing is equal to the change in the debt held by the private sector, $B_t - B_{t-l}$· 
+- Finally, the government can print currency to pay for its expenditures, and this is represented by the change in the outstanding stock of non-interest-bearing debt, $H_t - H_{t-1}$. 
+
+## The government's budget identity
+
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/post431.png")
+```
+
+```{r, out.width = "9000px", echo=FALSE}
+knitr::include_graphics("images/post432.png")
+```
+
+```{r, out.width = "9000px", echo=FALSE}
+knitr::include_graphics("images/44.png")
+```
+
+## The roles of anticipated and unanticipated inflation
+
+
+```{r, out.width = "300px", echo=FALSE}
+knitr::include_graphics("images/45.png")
+```
+
+## Seigniorage
+
+```{r, out.width = "300px", echo=FALSE}
+knitr::include_graphics("images/46.png")
+```
+
+## Two sources of seigniorage {.smaller}
+
+- First, $h_t - h_{t-1}$ is equal to the change in real highpowered money holdings. Since the government is the monopoly issuer of high-powered money, an increase in the amount of high-powered money that the private sector is willing to hold allows the government to obtain real resources in return. In a steady-state equilibrium, h is constant, so this source of seigniorage then equals zero. 
+- The second term in (4.6) is normally the focus of analyses of seigniorage because it can be nonzero even in the steady state. To maintain a constant level of real money holdings, the private sector needs to increase its nominal holdings of money at the rate $\pi$ (approximately) to offset the effects of inflation on real holdings. 
+
+## Seignorage equal
+
+
+```{r, out.width = "300px", echo=FALSE}
+knitr::include_graphics("images/47.png")
+```
+
+## The government's budget constraint 
+
+- The government's budget constraint can be expressed in terms of the total liabilities of the government. Using (4.5) and (4.6), the budget can be written as 
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/48n9.png")
+```
+
+## 4.2.1 Intertemporal Budget Balance 
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/410.png")
+```
+
+
+## the no Ponzi condition
+
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/411.png")
+```
+
+## the no Ponzi condition (cont'd)
+
+- In this case, the right side of ( 4.1 0) becomes the present discounted value of all current and future tax and seigniorage revenue, and this is equal to the left side, which is the present 
+discounted value of all current and future expenditures plus current outstanding debt (principal plus interest). 
+- In other words, the government must plan to raise sufficient revenue, in present value terms, to repay its existing debt and finance its planned expenditures. 
+
+## The primary defisit definition
+
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/412.png")
+```
+
+## 4.3 Money and Fiscal Policy Frameworks {.smaller}
+
+- Most analyses of monetary phenomena and monetary policy assume, usually without statement, that variations in the stock of money matter but that how that variation occurs does 
+not. 
+- The nominal money supply could change because of a shift from tax-financed government expenditures to seigniorage-financed expenditures. Or it could change as the result 
+of an open-market operation in which the central bank purchases interest-bearing debt, 
+financing the purchase by an increase in non-interest-bearing debt, holding other taxes 
+constant (see 4.2). 
+- Because these two means of increasing the money stock have differing implications for taxes and the stock of interest-bearing government debt, they may lead to different effects on prices and/or interest rates.
+
+## 4.4 Deficits and Inflation 
+
+- Two questions have formed the focus of studies of deficits and inflation. 
+  + First, do fiscal deficits necessarily imply that inflation will eventually occur? 
+  + Second, if inflation is not a necessary consequence of deficits, is it in fact a historical consequence? 
+
+## The Government's budget constrain
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/413.png")
+```
+
+## VECM
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/414.png")
+```
+
+## 4.4.1 Ricardian and (Traditional) Non-Ricardian Fiscal Policies 
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/415.png")
+```
+
+## The budget constraint of the representative agent
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/416.png")
+```
+
+## Traditional non-Ricardian
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/417.png")
+```
+
+
+## The Equalibrium steady state
+
+```{r, out.width = "600px", echo=FALSE}
+knitr::include_graphics("images/418.png")
+```
+
+## 4.4.2 The Government Budget Constraint and the Nominal Rate of Interest {.smaller}
+
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/419.png")
+```
+
+## A perfect-foresight equilibrium
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/420.png")
+```
+
+## When government expenditures and taxes are constant
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/421.png")
+```
+
+## 4.4.3 Equilibrium Seigniorage 
+
+- That is, suppose the economy consists of identical individuals, and the 
+utility of the representative agent is given by
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/422.png")
+```
+
+## The standard Euler condition
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/423n24.png")
+```
+
+
+## Seigniorage as a function of inflation
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/fig41.png")
+```
+
+## 4.4.4 Cagan's Model
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/425n26.png")
+```
+
+## Money growth and seignorage revenue
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/fig42.png")
+```
+
+
+## The high inflation equilibrium or the low inflation equilibrium
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/427.png")
+```
+
+## The high inflation equilibrium or the low inflation equilibrium (cont'd)
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/428.png")
+```
+
+
+## 4.4.5 Rational Hyperinflation{.smaller}
+
+- Why do countries find themselves in situations of hyperinflation? Most explanations of 
+hyperinflation point to fiscal policy as the chief culprit. 
+- Governments that are forced to print 
+money to finance real government expenditures often end up generating hyperinflations. 
+- In that sense, rapid money growth does lead to hyperinflation, consistent with the relationship 
+between money growth and inflation implied by the models examined so far, but money finance a fiscal deficit.
+
+## Rational Hyperinflation
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/429.png")
+```
+
+## Rational Hyperinflation (cont'd)
+
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("images/430n31.png")
+```
