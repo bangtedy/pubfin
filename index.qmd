@@ -92,30 +92,40 @@ theme_set(papaja::theme_apa())
 ```
 ## 4.1 Introduction 
 
-- Inflation is a tax... as a tax: 
+- Inflation is a tax... and as a tax: 
   + generates revenue for the government, and 
-  + distorts private sector behaviour. 
+  + distorts private sector behavior. 
   
 ## The Distortions
 
 - In the Sidrauski model (*chap 2*) inflation distorts the demand for money, thereby generating welfare effects because real money holdings directly yield utility. 
 - In the cash-in-advance model (*chap 3*), inflation serves as an implicit tax on consumption, so a higher inflation rate generates a substitution toward leisure, leading to lower labor supply, output, and consumption. 
 
-## The analysis of these distortions 
+## In the analysis of ... 
 
 - In the analysis of these distortions, the revenue side of the inflation tax was ignored except to note that the Friedman rule for the optimal rate of inflation may need to be modified if the government does not have lump-sum sources of revenue available.
 
 - Any change in inflation that affects the revenue from the inflation tax will have budgetary implications for the government. 
   + If higher inflation allows other forms of distortionary taxation to be reduced, this fact must be incorporated into any assessment of the costs of the inflation tax. 
+  
+## In the analysis of ... (cont'd)
+
+- If higher inflation allows other forms of distortionary taxation to be 
+reduced, this fact must be incorporated into any assessment of the costs of the inflation 
+tax. 
+- This chapter introduces the government sector's budget constraint and examines the 
+revenue implications of inflation. 
+- This allows a more explicit focus on the role of inflation in a theory of public finance and draws on the literature on optimal taxation to analyze the effects of inflation. 
 
 ## Several insights from a public finance approach {.smaller}
 
 - The recognition that fiscal and monetary policies are linked through the government sector's budget constraint. 
-- Variations in the inflation rate can have implications for the fiscal authority's decisions about expenditures and taxes, *vice versa*, decisions by the fiscal authority can have implications for money growth and inflation. 
+  + Variations in the inflation rate can have implications for the fiscal authority's decisions about expenditures and taxes, *vice versa*, 
+  + Decisions by the fiscal authority can have implications for money growth and inflation. 
 - When inflation is viewed as a distortionary revenue-generating tax, the degree to which it should be relied upon depends on the set of alternative taxes available to the government and on the reasons individuals hold money. 
 - Whether the most appropriate strategy is to think of money as entering the utility function as a final good or as an intermediate input into the production of transaction services can have implications for whether money should be taxed.
 
-## 4.2 Budget Accounting {.smaller}
+## 4.2 Budget Accounting
 
 - To obtain goods and services, governments in market economies need to generate revenue. 
 - One way they can obtain goods and services is by printing money, which is then used to 
@@ -126,7 +136,7 @@ $$
 G_t+i_{t-1}B^T_{t-1}=T_t+({B^T_t}-B^T_{t-1})+RCB_t, \tag{4.1}
 $$
 
-- where all variables are in nominal terms. 
+  + where all variables are in nominal terms. 
 
 ## Treasury's budget constraint
 
@@ -144,7 +154,7 @@ knitr::include_graphics("images/42.png")
 
 - where $B^M_t - B^M_{t-1}$ is equal to the central bank's purchases of government debt, $i_{t-1}B^M_{t-1}$ is the central bank's receipt of interest payments from the Treasury, and $H_t - H_{t-1}$ is the change in the central bank's own liabilities. 
 
-- These liabilities are called high-powered money, or the monetary base, because they form the stock of currency held by the nonbank public plus bank reserves, and they represent the reserves private banks can use to back deposits.
+- These liabilities are called *high-powered money*, or *the monetary base*, because they form the stock of currency held by the nonbank public plus bank reserves, and they represent the reserves private banks can use to back deposits.
 
 ## The Treasury and the central bank {.smaller}
 
@@ -152,11 +162,11 @@ knitr::include_graphics("images/42.png")
 knitr::include_graphics("images/43.png")
 ```
 
-- According to (4.3), the dollar value of government purchases $G_t$. plus its payment of 
+- According to (4.3), the dollar value of government purchases $G_t$ plus its payment of 
 interest on outstanding privately held liabilities $i_{t-1}-B_{t-1}$, must be funded by revenue that can be obtained from one of three alternative sources. 
-- First, $T_t$ represents revenue generated  by taxes (other than inflation). 
-- Second, the government can obtain funds by borrowing from the private sector. This borrowing is equal to the change in the debt held by the private sector, $B_t - B_{t-l}$· 
-- Finally, the government can print currency to pay for its expenditures, and this is represented by the change in the outstanding stock of non-interest-bearing debt, $H_t - H_{t-1}$. 
+  + First, $T_t$ represents revenue generated  by taxes (other than inflation). 
+  + Second, the government can obtain funds by borrowing from the private sector. This borrowing is equal to the change in the debt held by the private sector, $B_t - B_{t-l}$· 
+  + Finally, the government can print currency to pay for its expenditures, and this is represented by the change in the outstanding stock of non-interest-bearing debt, $H_t - H_{t-1}$. 
 
 ## The government's budget identity
 
@@ -188,8 +198,10 @@ knitr::include_graphics("images/46.png")
 
 ## Two sources of seigniorage {.smaller}
 
-- First, $h_t - h_{t-1}$ is equal to the change in real highpowered money holdings. Since the government is the monopoly issuer of high-powered money, an increase in the amount of high-powered money that the private sector is willing to hold allows the government to obtain real resources in return. In a steady-state equilibrium, h is constant, so this source of seigniorage then equals zero. 
-- The second term in (4.6) is normally the focus of analyses of seigniorage because it can be nonzero even in the steady state. To maintain a constant level of real money holdings, the private sector needs to increase its nominal holdings of money at the rate $\pi$ (approximately) to offset the effects of inflation on real holdings. 
+- First, $h_t - h_{t-1}$ is equal to the change in real highpowered money holdings. 
+  + Since the government is the monopoly issuer of high-powered money, an increase in the amount of high-powered money that the private sector is willing to hold allows the government to obtain real resources in return. In a steady-state equilibrium, h is constant, so this source of seigniorage then equals zero. 
+- The second term in (4.6) is normally the focus of analyses of seigniorage because it can be nonzero even in the steady state. 
+  + To maintain a constant level of real money holdings, the private sector needs to increase its nominal holdings of money at the rate $\pi$ (approximately) to offset the effects of inflation on real holdings. 
 
 ## Seignorage equal
 
@@ -198,7 +210,7 @@ knitr::include_graphics("images/46.png")
 knitr::include_graphics("images/47.png")
 ```
 
-## The government's budget constraint 
+## The government's budget constraint {.smaller}
 
 - The government's budget constraint can be expressed in terms of the total liabilities of the government. Using (4.5) and (4.6), the budget can be written as 
 
@@ -213,23 +225,23 @@ knitr::include_graphics("images/410.png")
 ```
 
 
-## the no Ponzi condition
+## The no Ponzi condition
 
 
-```{r, out.width = "500px", echo=FALSE}
+```{r, out.width = "600px", echo=FALSE}
 knitr::include_graphics("images/411.png")
 ```
 
-## the no Ponzi condition (cont'd)
+## The no Ponzi condition (cont'd)
 
-- In this case, the right side of ( 4.1 0) becomes the present discounted value of all current and future tax and seigniorage revenue, and this is equal to the left side, which is the present 
+- In this case, the right side of ( 4.10) becomes the present discounted value of all current and future tax and seigniorage revenue, and this is equal to the left side, which is the present 
 discounted value of all current and future expenditures plus current outstanding debt (principal plus interest). 
 - In other words, the government must plan to raise sufficient revenue, in present value terms, to repay its existing debt and finance its planned expenditures. 
 
 ## The primary defisit definition
 
 
-```{r, out.width = "500px", echo=FALSE}
+```{r, out.width = "700px", echo=FALSE}
 knitr::include_graphics("images/412.png")
 ```
 
@@ -243,11 +255,54 @@ financing the purchase by an increase in non-interest-bearing debt, holding othe
 constant (see 4.2). 
 - Because these two means of increasing the money stock have differing implications for taxes and the stock of interest-bearing government debt, they may lead to different effects on prices and/or interest rates.
 
-## 4.4 Deficits and Inflation 
+## The budget link {.smaller}
 
+- The government sector's budget constraint links monetary and fiscal policies in ways 
+that can matter for determining how a change in the money stock affects the equilibrium 
+price level.
+- The budget link also means that one needs to be precise about defining monetary policy as distinct from fiscal policy. An open-market purchase increases the stock of money, but by reducing the interest-bearing government debt held by the public, it has implications for the future stream of taxes needed to finance the interest cost of the government's debt. 
+- So an open-market operation potentially has a fiscal side to it, and this fact 
+can lead to ambiguity in defining what one means by a change in monetary policy, holding 
+fiscal policy constant.
+
+## Alternative assumptions (most traditional analyses) 
+
+- In most traditional analyses, fiscal policy is assumed to adjust to ensure that the government's intertemporal budget is always in balance, while monetary policy is free to set the nominal money stock or the nominal rate of interest. 
+  + This situation is described as one of monetary dominance (Sargent 1982) or one 
+in which fiscal policy is passive and monetary policy is active (Leeper 1991). (chap 2&3)
+
+## Alternative assumptions (a Ricardian regime (Sargent 1982)) {.smaller}
+
+- A second policy regime is one in which the fiscal authority sets its expenditures and 
+taxes without regard to any requirement of intertemporal budget balance. 
+- If the present discounted value of these taxes is not sufficient to finance expenditures (in present value terms), seigniorage must adjust to ensure that the government's intertemporal budget constraint is satisfied. 
+- This regime is one of fiscal dominance (or active fiscal policy) and 
+passive monetary policy, as monetary policy must adjust to deliver the level of seigniorage 
+required to balance the government's budget.
+- Prices and inflation are affected by changes in fiscal policy because these fiscal changes, if they require a change in seigniorage, alter the current and/or future money supply.
+
+## Alternative assumptions (non-Ricardian)
+
+- Known as the fiscal theory of the price level (Sims 1994; Woodford 1995; 2001a; Cochrane 1999).
+
+- In this regime, the government's intertemporal budget constraint may not be satisfied for arbitrary price levels (section 4.5.). 
+
+## 4.4 Deficits and Inflation {.smaller}
+
+- The intertemporal budget constraint implies that any government with a current outstanding debt must run, in present value terms, future surpluses. 
+- One way to generate a surplus is to increase revenue from seigniorage, and for that reason, economists have been interested in the implications of budget deficits for future money growth.
 - Two questions have formed the focus of studies of deficits and inflation. 
   + First, do fiscal deficits necessarily imply that inflation will eventually occur? 
   + Second, if inflation is not a necessary consequence of deficits, is it in fact a historical consequence? 
+  
+## The first question {.smaller}
+
+- The literature on the first question has focused on the implications for inflation if the 
+monetary authority must act to ensure that the government's intertemporal budget is balanced. 
+- This interpretation views fiscal policy as set independently, so that the monetary 
+authority is forced to generate enough seigniorage to satisfy the intertemporal budget balance condition. 
+- Leeper (1991) describes this as a situation with an active fiscal policy and 
+a passive monetary policy. It is also described as a situation of fiscal dominance. 
 
 ## The Government's budget constrain
 
@@ -255,13 +310,60 @@ constant (see 4.2).
 knitr::include_graphics("images/413.png")
 ```
 
+
+## The second question {.smaller}
+
+- The literature on the second question-has inflation been a consequence of deficits 
+historically?-has focused on estimating empirically the effects of deficits on money 
+growth. 
+- Joines (1985) found money growth in the United States to be positively related 
+to major war spending but not to nonwar deficits. 
+- Grier and Neiman (1987) summarized a number of earlier studies of the relationship between deficits and money growth (and other measures of monetary policy) in the United States. That the results are generally inconclusive is perhaps not surprising, as the studies they reviewed were all based on postwar but pre-1980 data.
+- King and Plosser ( 1985), reported that the fiscal deficit did help to predict future seigniorage for the United States. They interpreted this as mixed evidence for fiscal dominance. 
+
+
+## One objection
+
+- One objection to this empirical literature is that simple regressions of money growth on 
+deficits, or unrestricted VAR used to assess Granger causality (i.e., whether deficits contain any predictive information about future money growth), ignore information about the 
+long-run behavior of taxes, debt, and seigniorage that is implied by intertemporal budget 
+balance. 
+
 ## VECM
 
 ```{r, out.width = "500px", echo=FALSE}
 knitr::include_graphics("images/414.png")
 ```
 
-## 4.4.1 Ricardian and (Traditional) Non-Ricardian Fiscal Policies 
+## Bohn estimation {.smaller}
+
+- Bohn (1991a) estimated a model of the form (4. 14) using U.S. data from 1800 to 1988. 
+- Unfortunately for our purposes, Bohn did not treat seigniorage separately, and thus his 
+results are not directly relevant for determining the effects of spending or tax shocks on 
+the adjustment of seigniorage. 
+- He did find, however, that one-half to two-thirds of deficits initiated by a tax revenue shock were eventually eliminated by spending adjustments, while about one-third of spending shocks were essentially permanent and resulted in tax changes. 
+
+## 4.4.1 Ricardian and (Traditional) Non-Ricardian Fiscal Policies {.smaller}
+
+
+- Metzler (1951) argued that an open-market purchase, that is, an increase in the nominal quantity of money held by the public and an offsetting reduction in the nominal stock of interest-bearing debt held by the public, would raise the price level less than proportionally to the increase in M. 
+- An open-market operation would therefore affect the real stock of money and lead to a change in the equilibrium rate of interest. 
+- Metzler assumed that households' desired portfolio holdings of bonds and money depended on the expected return on bonds. 
+- An open-market operation, by altering the ratio of bonds to money, requires a change in the rate of interest to induce private agents 
+to hold the new portfolio composition of bonds and money. 
+- A price-level change proportional to the change in the nominal money supply would not restore equilibrium, because it would not restore the original ratio of nominal bonds to nominal money. 
+
+## Ricardian and (Traditional) Non-Ricardian Fiscal Policies {.smaller}
+
+- Sargent and Wallace (1981) showed that the backing for government debt, whether it is 
+ultimately paid for by taxes or by printing money, is important in determining the effects 
+of debt issuance and open-market operations. 
+- This finding can be illustrated following the analysis of Aiyagari and Gertler (1985). 
+- They used a two-period overlapping-generations model that allows debt policy to affect the real intergenerational distribution of wealth. 
+- This effect is absent from the representative agent model used here, but the representative agent framework can still be used to show how the specification of fiscal policy has important 
+implications for conclusions about the link between the money supply and the price level
+
+## The government's budget constraint
 
 ```{r, out.width = "500px", echo=FALSE}
 knitr::include_graphics("images/415.png")
@@ -289,7 +391,7 @@ knitr::include_graphics("images/418.png")
 ## 4.4.2 The Government Budget Constraint and the Nominal Rate of Interest {.smaller}
 
 
-```{r, out.width = "500px", echo=FALSE}
+```{r, out.width = "1000px", echo=FALSE}
 knitr::include_graphics("images/419.png")
 ```
 
@@ -353,7 +455,7 @@ knitr::include_graphics("images/428.png")
 ```
 
 
-## 4.4.5 Rational Hyperinflation{.smaller}
+## 4.4.5 Rational Hyperinflation
 
 - Why do countries find themselves in situations of hyperinflation? Most explanations of 
 hyperinflation point to fiscal policy as the chief culprit. 
@@ -370,6 +472,6 @@ knitr::include_graphics("images/429.png")
 
 ## Rational Hyperinflation (cont'd)
 
-```{r, out.width = "500px", echo=FALSE}
+```{r, out.width = "900px", echo=FALSE}
 knitr::include_graphics("images/430n31.png")
 ```
